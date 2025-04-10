@@ -1503,4 +1503,9 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	font-size: 24px;
   }
 
-  
+  /* course-details  */
+  .list-group-item {
+	
+	color: #000;
+  }
+  /* course-details  */
