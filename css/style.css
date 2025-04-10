@@ -373,7 +373,33 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         -ms-transform: translateY(-10px) rotate(-45deg);
             transform: translateY(-10px) rotate(-45deg);
 }
-
+#header .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+  
+  #nav {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+  }
+  
+  .navbar-btn {
+	margin-left: 20px;
+  }
+  .btn-primary:hover {
+	color: #fff;
+	background-color: #d6ae48;
+	border-color:
+  #d6ae48;
+  }
+  .btn-primary {
+	color: #d6ae48;
+	background-color: #fff;
+	border-color:
+  #d6ae48;
+  }
 /*------------------------------------*\
 	Hero Area
 \*------------------------------------*/
@@ -1446,3 +1472,35 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	}
 }
   /* COURSE  */
+  .feature-card {
+	background: #fff;
+	border: 1px solid #eee;
+	padding: 30px 15px;
+	border-radius: 12px;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+	transition: transform 0.2s ease;
+  }
+  
+  .feature-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .icon-circle {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: 1px solid #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	background-color: #fefefe;
+  }
+  
+  .icon-circle i {
+	color: goldenrod;
+	font-size: 24px;
+  }
+
+  
