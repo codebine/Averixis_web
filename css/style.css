@@ -1677,3 +1677,9 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	justify-content: center;
 	margin-right: 10px;
   } 
+  .course-img img {
+	width: 100%;        /* ensures responsiveness within the parent */
+	height: 200px;      /* fixed height */
+	object-fit: cover;  /* makes sure the image covers the area without distortion */
+	border-radius: 5px; /* optional: adds rounded corners */
+  }
