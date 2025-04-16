@@ -21,26 +21,112 @@
   <link href="css/style.css" rel="stylesheet">
 
   <style>
-   .content-wrapper {
+   .container {
+      max-width: 1140px;
+      margin: 0 auto;
       padding: 2rem;
-      border-radius: 10px;
-      margin-top: 50px;
-      color:#000;
+    }
+    .content-wrapper {
+      padding: 2rem;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .mb-4 {
+      margin-bottom: 1.5rem;
+    }
+    .lead {
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .col-md-3, .col-md-9 {
+      flex: 1;
+    }
+    .col-md-3 {
+      max-width: 25%;
+    }
+    .col-md-9 {
+      max-width: 70%;
+    }
+    @media (max-width: 768px) {
+      .col-md-3, .col-md-9 {
+        max-width: 100%;
+      }
+      .row {
+        flex-direction: column;
+      }
     }
 
+    .nav.flex-column.nav-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .nav.flex-column.nav-pills button {
+      padding: 0.75rem 1rem;
+      border: none;
+      background-color: #e9ecef;
+      color: #333;
+      cursor: pointer;
+      border-radius: 5px;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+    .nav.flex-column.nav-pills button:hover,
+    .nav.flex-column.nav-pills button.active {
+      background-color: #d6ae48;
+      color: #fff;
+    }
+
+    .tab-content > .tab-pane {
+      display: none;
+    }
+    .tab-content > .tab-pane.active {
+      display: block;
+    }
+    h4 {
+      margin-top: 1rem;
+      color: #d6ae48;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
     .video-container {
       margin-top: 2rem;
     }
-
-    .video-container video {
+    video {
       width: 100%;
+      max-width: 720px;
       border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
-    .navbar-nav .nav-link {
-      padding-right: 1rem;
-      padding-left: 1rem;
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-  </style>
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    }
+    .card-title {
+      font-size: 1.25rem;
+      color: #0d6efd;
+      margin-bottom: 0.5rem;
+    }
+    .card-text {
+      margin-bottom: 1rem;
+    }
+ 
+
+</style>
 </head>
 <body>
   <!-- Header -->
@@ -111,22 +197,17 @@
     <div class="row mt-4">
       <div class="col-md-3 mb-3">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-          <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
-            type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Overview</button>
-          <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
-            type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Eligibility</button>
-          <button class="nav-link" id="v-pills-projects-tab" data-bs-toggle="pill" data-bs-target="#v-pills-projects"
-            type="button" role="tab" aria-controls="v-pills-projects" aria-selected="false">Projects</button>
-          <button class="nav-link" id="v-pills-benefits-tab" data-bs-toggle="pill" data-bs-target="#v-pills-benefits"
-            type="button" role="tab" aria-controls="v-pills-benefits" aria-selected="false">Benefits</button>
-          <button class="nav-link" id="v-pills-contact-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contact"
-            type="button" role="tab" aria-controls="v-pills-contact" aria-selected="false">Contact</button>
+          <button class="nav-link active" id="v-pills-home-tab" data-tab="v-pills-home">Overview</button>
+          <button class="nav-link" id="v-pills-profile-tab" data-tab="v-pills-profile">Eligibility</button>
+          <button class="nav-link" id="v-pills-projects-tab" data-tab="v-pills-projects">Projects</button>
+          <button class="nav-link" id="v-pills-benefits-tab" data-tab="v-pills-benefits">Benefits</button>
+          <button class="nav-link" id="v-pills-contact-tab" data-tab="v-pills-contact">Contact</button>
         </div>
       </div>
 
       <div class="col-md-9">
         <div class="tab-content" id="v-pills-tabContent">
-          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+          <div class="tab-pane active" id="v-pills-home">
             <h4>Programme Overview</h4>
             <p>
               Gain practical exposure to industrial tools and environments.
@@ -134,7 +215,7 @@
             </p>
           </div>
 
-          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          <div class="tab-pane" id="v-pills-profile">
             <h4>Eligibility Criteria</h4>
             <ul>
               <li>Students in their 2nd year and above in relevant fields (CS, IT, Design, etc.).</li>
@@ -143,7 +224,7 @@
             </ul>
           </div>
 
-          <div class="tab-pane fade" id="v-pills-projects" role="tabpanel" aria-labelledby="v-pills-projects-tab">
+          <div class="tab-pane" id="v-pills-projects">
             <h4>Project Domains</h4>
             <ul>
               <li>Web Development (Frontend + Backend)</li>
@@ -153,7 +234,7 @@
             </ul>
           </div>
 
-          <div class="tab-pane fade" id="v-pills-benefits" role="tabpanel" aria-labelledby="v-pills-benefits-tab">
+          <div class="tab-pane" id="v-pills-benefits">
             <h4>Internship Benefits</h4>
             <ul>
               <li>Certificate of Completion</li>
@@ -163,7 +244,7 @@
             </ul>
           </div>
 
-          <div class="tab-pane fade" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">
+          <div class="tab-pane" id="v-pills-contact">
             <h4>Contact & Support</h4>
             <p>Email: internship@averixis.com</p>
             <p>Phone: +91 98765 43210</p>
@@ -180,7 +261,62 @@
       </video>
     </div>
   </div>
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Internship Brouchers -->
+  <div class="container py-5">
+    <div class="mb-5">
+      <h4>Download Brochures</h4>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card hover-scale">
+            <div class="card-body">
+              <h5 class="card-title">AI Internship Brochure</h5>
+              <p class="card-text">Explore our AI & ML internship modules and training program.</p>
+              <a href="#" class="btn btn-primary">Download PDF</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card hover-scale">
+            <div class="card-body">
+              <h5 class="card-title">Web Dev Internship</h5>
+              <p class="card-text">Learn full-stack web development through real projects.</p>
+              <a href="#" class="btn btn-primary">Download PDF</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card hover-scale">
+            <div class="card-body">
+              <h5 class="card-title">IoT & Embedded</h5>
+              <p class="card-text">Hands-on IoT development and embedded system training.</p>
+              <a href="#" class="btn btn-primary">Download PDF</a>
+            </div>
+          </div>
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+    </div>
+
+  </div>
+  
 </body>
+<!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-link.active').classList.remove('active');
+        link.classList.add('active');
+
+        tabPanes.forEach(pane => {
+          pane.classList.remove('active');
+        });
+        const targetId = link.getAttribute('data-tab');
+        document.getElementById(targetId).classList.add('active');
+      });
+    });
+  </script>
 </html>
