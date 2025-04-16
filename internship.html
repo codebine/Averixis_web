@@ -127,6 +127,123 @@
  
 
 </style>
+<style>
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+  }
+
+  h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+  }
+
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+
+  .card-content h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .card-content p {
+    font-size: 0.95rem;
+    color: #444;
+  }
+
+  .card-content button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .card-content button:hover {
+    background: #0056b3;
+  }
+
+  /* Modal styling */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+  }
+
+  .modal-content {
+    position: relative;
+    background: white;
+    width: 80%;
+    height: 90%;
+    margin: 5% auto;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-content iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .download-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  .download-btn:hover {
+    background-color: #218838;
+  }
+</style>
 </head>
 <body>
   <!-- Header -->
@@ -298,7 +415,50 @@
     </div>
 
   </div>
-  
+  <div class="container">
+    <div class="card-grid">
+
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="ai-thumbnail.jpg" alt="AI Brochure">
+        <div class="card-content">
+          <h3>AI Internship Brochure</h3>
+          <p>Explore our AI & ML internship modules and training program.</p>
+          <button onclick="openPDF('/pdf/Micro_Biology.pdf')">Download PDF</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="web-thumbnail.jpg" alt="Web Dev Brochure">
+        <div class="card-content">
+          <h3>Web Dev Internship</h3>
+          <p>Learn full-stack web development through real projects.</p>
+          <button onclick="openPDF('webdev-brochure.pdf')">Download PDF</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="iot-thumbnail.jpg" alt="IoT Brochure">
+        <div class="card-content">
+          <h3>IoT & Embedded</h3>
+          <p>Hands-on IoT development and embedded system training.</p>
+          <button onclick="openPDF('iot-brochure.pdf')">Download PDF</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="pdfModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <iframe id="pdfFrame" src=""></iframe>
+      <a id="downloadLink" class="download-btn" href="" download>Download PDF</a>
+    </div>
+  </div>
 </body>
 <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -318,5 +478,33 @@
         document.getElementById(targetId).classList.add('active');
       });
     });
+  </script>
+  <script>
+    function openPDF(pdfPath) {
+      const modal = document.getElementById("pdfModal");
+      const iframe = document.getElementById("pdfFrame");
+      const downloadLink = document.getElementById("downloadLink");
+
+      iframe.src = pdfPath;
+      downloadLink.href = pdfPath;
+
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("pdfModal");
+      const iframe = document.getElementById("pdfFrame");
+
+      iframe.src = "";
+      modal.style.display = "none";
+    }
+
+    // Optional: Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById("pdfModal");
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
   </script>
 </html>
