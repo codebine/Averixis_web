@@ -1760,7 +1760,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 /* Home Video bg css  */
 .hero-area {
 	position: relative;
-	height: 100vh;
+	/* height: 100vh; */
 	overflow: hidden;
 	display: flex;
 	align-items: center;
