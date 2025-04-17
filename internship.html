@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +13,7 @@
 
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  
+
 
   <!-- Font Awesome -->
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" rel="stylesheet">
@@ -21,42 +22,55 @@
   <link href="css/style.css" rel="stylesheet">
 
   <style>
-   .container {
+    .container {
       max-width: 1140px;
       margin: 0 auto;
       padding: 2rem;
     }
+
     .content-wrapper {
       padding: 2rem;
     }
+
     .text-center {
       text-align: center;
     }
+
     .mb-4 {
       margin-bottom: 1.5rem;
     }
+
     .lead {
       font-size: 1.1rem;
       color: #555;
     }
+
     .row {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
     }
-    .col-md-3, .col-md-9 {
+
+    .col-md-3,
+    .col-md-9 {
       flex: 1;
     }
+
     .col-md-3 {
       max-width: 25%;
     }
+
     .col-md-9 {
       max-width: 70%;
     }
+
     @media (max-width: 768px) {
-      .col-md-3, .col-md-9 {
+
+      .col-md-3,
+      .col-md-9 {
         max-width: 100%;
       }
+
       .row {
         flex-direction: column;
       }
@@ -67,6 +81,7 @@
       flex-direction: column;
       gap: 0.5rem;
     }
+
     .nav.flex-column.nav-pills button {
       padding: 0.75rem 1rem;
       border: none;
@@ -77,34 +92,41 @@
       text-align: left;
       transition: all 0.3s ease;
     }
+
     .nav.flex-column.nav-pills button:hover,
     .nav.flex-column.nav-pills button.active {
       background-color: #d6ae48;
       color: #fff;
     }
 
-    .tab-content > .tab-pane {
+    .tab-content>.tab-pane {
       display: none;
     }
-    .tab-content > .tab-pane.active {
+
+    .tab-content>.tab-pane.active {
       display: block;
     }
+
     h4 {
       margin-top: 1rem;
       color: #d6ae48;
     }
+
     ul {
       padding-left: 1.2rem;
     }
+
     .video-container {
       margin-top: 2rem;
     }
+
     video {
       width: 100%;
       max-width: 720px;
       border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     }
+
     .card {
       background: white;
       border-radius: 10px;
@@ -112,139 +134,131 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
     }
+
     .card-title {
       font-size: 1.25rem;
       color: #0d6efd;
       margin-bottom: 0.5rem;
     }
+
     .card-text {
       margin-bottom: 1rem;
     }
- 
+  </style>
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
 
-</style>
-<style>
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 2rem;
-  }
+    h2 {
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
 
-  h2 {
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
 
-  .card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-  }
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      transition: transform 0.3s ease;
+    }
 
-  .card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    width: 300px;
-    transition: transform 0.3s ease;
-  }
+    .card:hover {
+      transform: scale(1.03);
+    }
 
-  .card:hover {
-    transform: scale(1.03);
-  }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
 
-  .card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
+    .card-content {
+      padding: 1rem;
+    }
 
-  .card-content {
-    padding: 1rem;
-  }
+    .card-content h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+    }
 
-  .card-content h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.2rem;
-  }
+    .card-content p {
+      font-size: 0.95rem;
+      color: #444;
+    }
 
-  .card-content p {
-    font-size: 0.95rem;
-    color: #444;
-  }
 
-  .card-content button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: #007bff;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-  }
 
-  .card-content button:hover {
-    background: #0056b3;
-  }
+    /* Modal styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+    }
 
-  /* Modal styling */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-  }
+    .modal-content {
+      position: relative;
+      background: white;
+      width: 80%;
+      height: 90%;
+      margin: 5% auto;
+      padding: 1rem;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+    }
 
-  .modal-content {
-    position: relative;
-    background: white;
-    width: 80%;
-    height: 90%;
-    margin: 5% auto;
-    padding: 1rem;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-  }
+    .modal-content iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
 
-  .modal-content iframe {
-    flex: 1;
-    width: 100%;
-    border: none;
-  }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
 
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer;
-  }
+    .download-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 5px;
+    }
 
-  .download-btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.6rem 1.2rem;
-    background-color: #28a745;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 5px;
-  }
-
-  .download-btn:hover {
-    background-color: #218838;
-  }
-</style>
+    .download-btn:hover {
+      background-color: #218838;
+    }
+  </style>
 </head>
+
 <body>
   <!-- Header -->
   <header id="header" class="transparent-nav">
@@ -275,39 +289,40 @@
     </div>
   </header>
   <!-- /Header -->
-   <!-- Hero-area -->
-		<div class="hero-area section">
+  <!-- Hero-area -->
+  <div class="hero-area section">
 
-			<!-- Backgound Image -->
-			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/blog-post-background.jpg)"></div>
-			<!-- /Backgound Image -->
+    <!-- Backgound Image -->
+    <div class="bg-image bg-parallax overlay" style="background-image:url(./img/blog-post-background.jpg)"></div>
+    <!-- /Backgound Image -->
 
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1 text-center" style="margin-top: 150px;">
-						<ul class="hero-area-tree">
-							<li><a href="index.html">Home</a></li>
-							<li>Internship</li>
-						</ul>
-						<h1 class="white-text">Internship Details</h1>
-						<!-- <ul class="blog-post-meta">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 text-center" style="margin-top: 150px;">
+          <ul class="hero-area-tree">
+            <li><a href="index.html">Home</a></li>
+            <li>Internship</li>
+          </ul>
+          <h1 class="white-text">Internship Details</h1>
+          <!-- <ul class="blog-post-meta">
 							<li class="blog-meta-author">By : <a href="#">John Doe</a></li>
 							<li>18 Oct, 2017</li>
 							<li class="blog-meta-comments"><a href="#"><i class="fa fa-comments"></i> 35</a></li>
 						</ul> -->
-					</div>
-				</div>
-			</div>
+        </div>
+      </div>
+    </div>
 
-		</div>
-		<!-- /Hero-area -->
+  </div>
+  <!-- /Hero-area -->
 
   <!-- Content -->
   <div class="container content-wrapper">
     <h2 class="text-center mb-4">Averixis Internship Programme</h2>
     <p class="lead">
       Welcome to the Averixis Internship Programme — where innovation meets opportunity.
-      Our internship is designed to equip you with hands-on experience, working with top-tier professionals in areas such as AI, Web Development, Data Science, and UI/UX Design.
+      Our internship is designed to equip you with hands-on experience, working with top-tier professionals in areas
+      such as AI, Web Development, Data Science, and UI/UX Design.
       From curated training to real-world project exposure, Averixis empowers the next generation of tech leaders.
     </p>
 
@@ -328,7 +343,8 @@
             <h4>Programme Overview</h4>
             <p>
               Gain practical exposure to industrial tools and environments.
-              Our internship includes guided modules, weekly mentor check-ins, and hands-on assignments that align with industry needs.
+              Our internship includes guided modules, weekly mentor check-ins, and hands-on assignments that align with
+              industry needs.
             </p>
           </div>
 
@@ -379,79 +395,46 @@
     </div>
   </div>
   <!-- Internship Brouchers -->
-  <div class="container py-5">
-    <div class="mb-5">
-      <h4>Download Brochures</h4>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card hover-scale">
-            <div class="card-body">
-              <h5 class="card-title">AI Internship Brochure</h5>
-              <p class="card-text">Explore our AI & ML internship modules and training program.</p>
-              <a href="#" class="btn btn-primary">Download PDF</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card hover-scale">
-            <div class="card-body">
-              <h5 class="card-title">Web Dev Internship</h5>
-              <p class="card-text">Learn full-stack web development through real projects.</p>
-              <a href="#" class="btn btn-primary">Download PDF</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card hover-scale">
-            <div class="card-body">
-              <h5 class="card-title">IoT & Embedded</h5>
-              <p class="card-text">Hands-on IoT development and embedded system training.</p>
-              <a href="#" class="btn btn-primary">Download PDF</a>
-            </div>
-          </div>
-        </div>
-        <!-- Add more cards as needed -->
-      </div>
-    </div>
 
-  </div>
   <div class="container">
+    <h4>Explore all Our Brouchers</h4>
     <div class="card-grid">
-
       <!-- Card 1 -->
       <div class="card">
-        <img src="ai-thumbnail.jpg" alt="AI Brochure">
+        <img class="pdf-cover" data-pdf="/pdf/Micro_Biology.pdf" src="placeholder.jpg" alt="AI Brochure">
         <div class="card-content">
           <h3>AI Internship Brochure</h3>
           <p>Explore our AI & ML internship modules and training program.</p>
-          <button onclick="openPDF('/pdf/Micro_Biology.pdf')">Download PDF</button>
+          <a class="btn btn-primary" onclick="openPDF('/pdf/Micro_Biology.pdf')">View</a>
         </div>
       </div>
 
       <!-- Card 2 -->
       <div class="card">
-        <img src="web-thumbnail.jpg" alt="Web Dev Brochure">
+        <img class="pdf-cover" data-pdf="/pdf/Molecular Biology Mentorship Curiculum.pdf" src="placeholder.jpg"
+          alt="Molecular Biology Brochure">
         <div class="card-content">
-          <h3>Web Dev Internship</h3>
-          <p>Learn full-stack web development through real projects.</p>
-          <button onclick="openPDF('webdev-brochure.pdf')">Download PDF</button>
+          <h3>Molecular Biology</h3>
+          <p>Explore our Molecular Biology internship modules and training program.</p>
+          <a class="btn btn-primary" onclick="openPDF('/pdf/Molecular Biology Mentorship Curiculum.pdf')">View</a>
         </div>
       </div>
 
       <!-- Card 3 -->
       <div class="card">
-        <img src="iot-thumbnail.jpg" alt="IoT Brochure">
+        <img class="pdf-cover" data-pdf="/pdf/Nano_Technology_Internship_Curriculums-1.pdf" src="placeholder.jpg"
+          alt="Nano Tech Brochure">
         <div class="card-content">
-          <h3>IoT & Embedded</h3>
-          <p>Hands-on IoT development and embedded system training.</p>
-          <button onclick="openPDF('iot-brochure.pdf')">Download PDF</button>
+          <h3>Nano Technology</h3>
+          <p>Explore our Nano Technology internship modules and training program.</p>
+          <a class="btn btn-primary" onclick="openPDF('/pdf/Nano_Technology_Internship_Curriculums-1.pdf')">View</a>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- Modal -->
+  <!-- Modal --> 0
   <div id="pdfModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -461,50 +444,88 @@
   </div>
 </body>
 <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const navLinks = document.querySelectorAll('.nav-link');
-    const tabPanes = document.querySelectorAll('.tab-pane');
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
 
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        document.querySelector('.nav-link.active').classList.remove('active');
-        link.classList.add('active');
+<script>
+  const navLinks = document.querySelectorAll('.nav-link');
+  const tabPanes = document.querySelectorAll('.tab-pane');
 
-        tabPanes.forEach(pane => {
-          pane.classList.remove('active');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-link.active').classList.remove('active');
+      link.classList.add('active');
+
+      tabPanes.forEach(pane => {
+        pane.classList.remove('active');
+      });
+      const targetId = link.getAttribute('data-tab');
+      document.getElementById(targetId).classList.add('active');
+    });
+  });
+</script>
+<!-- PDF  -->
+<script>
+  function openPDF(pdfPath) {
+    const modal = document.getElementById("pdfModal");
+    const iframe = document.getElementById("pdfFrame");
+    const downloadLink = document.getElementById("downloadLink");
+
+    iframe.src = pdfPath;
+    downloadLink.href = pdfPath;
+
+    modal.style.display = "block";
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("pdfModal");
+    const iframe = document.getElementById("pdfFrame");
+
+    iframe.src = "";
+    modal.style.display = "none";
+  }
+
+  // Optional: Close modal when clicking outside
+  window.onclick = function (event) {
+    const modal = document.getElementById("pdfModal");
+    if (event.target == modal) {
+      closeModal();
+    }
+  }
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".pdf-cover");
+
+    images.forEach((imgEl) => {
+      const pdfUrl = imgEl.getAttribute("data-pdf");
+
+      const loadingTask = pdfjsLib.getDocument(pdfUrl);
+      loadingTask.promise.then(function (pdf) {
+        pdf.getPage(1).then(function (page) {
+          const viewport = page.getViewport({ scale: 1.5 });
+          const canvas = document.createElement("canvas");
+          const context = canvas.getContext("2d");
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          const renderContext = {
+            canvasContext: context,
+            viewport: viewport,
+          };
+
+          page.render(renderContext).promise.then(function () {
+            imgEl.src = canvas.toDataURL();
+          });
         });
-        const targetId = link.getAttribute('data-tab');
-        document.getElementById(targetId).classList.add('active');
+      }).catch(function (error) {
+        console.error("Failed to load PDF:", pdfUrl, error);
       });
     });
-  </script>
-  <script>
-    function openPDF(pdfPath) {
-      const modal = document.getElementById("pdfModal");
-      const iframe = document.getElementById("pdfFrame");
-      const downloadLink = document.getElementById("downloadLink");
+  });
+</script>
 
-      iframe.src = pdfPath;
-      downloadLink.href = pdfPath;
 
-      modal.style.display = "block";
-    }
 
-    function closeModal() {
-      const modal = document.getElementById("pdfModal");
-      const iframe = document.getElementById("pdfFrame");
-
-      iframe.src = "";
-      modal.style.display = "none";
-    }
-
-    // Optional: Close modal when clicking outside
-    window.onclick = function(event) {
-      const modal = document.getElementById("pdfModal");
-      if (event.target == modal) {
-        closeModal();
-      }
-    }
-  </script>
 </html>
