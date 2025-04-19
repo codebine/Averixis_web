@@ -1832,3 +1832,79 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   }
   
 /* Home Video bg css  */
+
+.trainers-section {
+	text-align: center;
+	padding: 50px 20px;
+  }
+
+  .trainers-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 40px;
+  }
+
+  .trainer-card {
+	background: white;
+	padding: 20px;
+	border-radius: 12px;
+	width: 280px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	position: relative;
+	overflow: hidden;
+  }
+
+  .trainer-img-wrapper {
+	position: relative;
+	display: inline-block;
+  }
+
+  .trainer-img {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 15px;
+	transition: 0.3s ease;
+  }
+
+  .social-icons {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	display: flex;
+	gap: 10px;
+	background: rgba(0, 0, 0, 0.6);
+	padding: 10px;
+	border-radius: 30px;
+  }
+
+  .social-icons a {
+	color: white;
+	font-size: 16px;
+	text-decoration: none;
+  }
+
+  .trainer-img-wrapper:hover .social-icons {
+	opacity: 1;
+  }
+
+  .trainer-name {
+	font-size: 18px;
+	font-weight: bold;
+  }
+
+  .trainer-role {
+	color: gray;
+	font-style: italic;
+	margin-bottom: 10px;
+  }
+
+  .trainer-desc {
+	font-size: 14px;
+	color: #444;
+  }
