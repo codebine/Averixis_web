@@ -18,6 +18,8 @@
 
   <!-- Custom Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
+  
+  <link href="css/internship.css" rel="stylesheet">
 
   <style>
     .content-wrapper {
@@ -81,11 +83,11 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-1 text-center" style="margin-top: 150px;">
-          <ul class="hero-area-tree">
+          <!-- <ul class="hero-area-tree">
             <li><a href="index.html">Home</a></li>
             <li>Internship</li>
-          </ul>
-          <h1 class="white-text">Internship Details</h1>
+          </ul> -->
+          <h1 class="white-text">Training Details</h1>
         </div>
       </div>
     </div>
@@ -94,10 +96,10 @@
 
   <!-- Content -->
   <div class="container content-wrapper">
-    <h2 class="text-center mb-4">Averixis Internship Programme</h2>
+    <h2 class="text-center mb-4">Averixis Training Programme</h2>
     <p class="lead">
-      Welcome to the Averixis Internship Programme — where innovation meets opportunity.
-      Our internship is designed to equip you with hands-on experience, working with top-tier professionals in areas such as AI, Web Development, Data Science, and UI/UX Design.
+      Welcome to the Averixis Training Programme — where innovation meets opportunity.
+      Our Training is designed to equip you with hands-on experience, working with top-tier professionals in areas such as AI, Web Development, Data Science, and UI/UX Design.
       From curated training to real-world project exposure, Averixis empowers the next generation of tech leaders.
     </p>
 
@@ -123,7 +125,7 @@
             <h4>Programme Overview</h4>
             <p>
               Gain practical exposure to industrial tools and environments.
-              Our internship includes guided modules, weekly mentor check-ins, and hands-on assignments that align with industry needs.
+              Our Training includes guided modules, weekly mentor check-ins, and hands-on assignments that align with industry needs.
             </p>
           </div>
 
@@ -147,7 +149,7 @@
           </div>
 
           <div class="tab-pane fade" id="v-pills-benefits" role="tabpanel" aria-labelledby="v-pills-benefits-tab">
-            <h4>Internship Benefits</h4>
+            <h4>Training Benefits</h4>
             <ul>
               <li>Certificate of Completion</li>
               <li>Letter of Recommendation for top performers</li>
@@ -158,23 +160,142 @@
 
           <div class="tab-pane fade" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">
             <h4>Contact & Support</h4>
-            <p>Email: internship@averixis.com</p>
+            <p>Email: Training@averixis.com</p>
             <p>Phone: +91 98765 43210</p>
           </div>
         </div>
       </div>
     </div>
+  
+  <!-- Training Brouchers -->
+  <div class="container">
+    <h4>Explore all Our Brouchers</h4>
+    <div class="card-grid">
+      <!-- Card 1 -->
+      <div class="card">
+        <img class="pdf-cover" data-pdf="/pdf/Micro_Biology.pdf" src="placeholder.jpg" alt="AI Brochure">
+        <div class="card-content">
+          <h3>AI Training Brochure</h3>
+          <p>Explore our AI & ML Training modules and training program.</p>
+          <a class="btn btn-primary" onclick="openPDF('/pdf/Micro_Biology.pdf')">View</a>
+        </div>
+      </div>
 
-    <div class="video-container">
-      <h4 class="mt-5">Watch Our Internship Preview</h4>
-      <video controls autoplay muted loop poster="img/video-thumbnail.jpg">
-        <source src="img/internship-preview.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <!-- Card 2 -->
+      <div class="card">
+        <img class="pdf-cover" data-pdf="/pdf/Molecular Biology Mentorship Curiculum.pdf" src="placeholder.jpg"
+          alt="Molecular Biology Brochure">
+        <div class="card-content">
+          <h3>Molecular Biology</h3>
+          <p>Explore our Molecular Biology internship modules and training program.</p>
+          <a class="btn btn-primary" onclick="openPDF('/pdf/Molecular Biology Mentorship Curiculum.pdf')">View</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <img class="pdf-cover" data-pdf="/pdf/Nano_Technology_Internship_Curriculums-1.pdf" src="placeholder.jpg"
+          alt="Nano Tech Brochure">
+        <div class="card-content">
+          <h3>Nano Technology</h3>
+          <p>Explore our Nano Technology internship modules and training program.</p>
+          <a class="btn btn-primary" onclick="openPDF('/pdf/Nano_Technology_Internship_Curriculums-1.pdf')">View</a>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Modal --> 
+  <div id="pdfModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <iframe id="pdfFrame" src=""></iframe>
+      <a id="downloadLink" class="download-btn" href="" download>Download PDF</a>
+    </div>
+  </div>
 </body>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+
+<script>
+  const navLinks = document.querySelectorAll('.nav-link');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-link.active').classList.remove('active');
+      link.classList.add('active');
+
+      tabPanes.forEach(pane => {
+        pane.classList.remove('active');
+      });
+      const targetId = link.getAttribute('data-tab');
+      document.getElementById(targetId).classList.add('active');
+    });
+  });
+</script>
+<!-- PDF  -->
+<script>
+  function openPDF(pdfPath) {
+    const modal = document.getElementById("pdfModal");
+    const iframe = document.getElementById("pdfFrame");
+    const downloadLink = document.getElementById("downloadLink");
+
+    iframe.src = pdfPath;
+    downloadLink.href = pdfPath;
+
+    modal.style.display = "block";
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("pdfModal");
+    const iframe = document.getElementById("pdfFrame");
+
+    iframe.src = "";
+    modal.style.display = "none";
+  }
+
+  // Optional: Close modal when clicking outside
+  window.onclick = function (event) {
+    const modal = document.getElementById("pdfModal");
+    if (event.target == modal) {
+      closeModal();
+    }
+  }
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".pdf-cover");
+
+    images.forEach((imgEl) => {
+      const pdfUrl = imgEl.getAttribute("data-pdf");
+
+      const loadingTask = pdfjsLib.getDocument(pdfUrl);
+      loadingTask.promise.then(function (pdf) {
+        pdf.getPage(1).then(function (page) {
+          const viewport = page.getViewport({ scale: 1.5 });
+          const canvas = document.createElement("canvas");
+          const context = canvas.getContext("2d");
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          const renderContext = {
+            canvasContext: context,
+            viewport: viewport,
+          };
+
+          page.render(renderContext).promise.then(function () {
+            imgEl.src = canvas.toDataURL();
+          });
+        });
+      }).catch(function (error) {
+        console.error("Failed to load PDF:", pdfUrl, error);
+      });
+    });
+  });
+</script>
 </html>
