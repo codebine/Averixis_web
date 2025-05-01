@@ -73,7 +73,7 @@ blockquote:before{
 	position:absolute;
 	left:0;
 	top:0;
-	color: #D6AE48;
+	color: #dfa974;
 	width:40px;
 	height:40px;
 	line-height:40px;
@@ -132,7 +132,7 @@ blockquote:before{
 	position:relative;
 	display:inline-block;
 	padding:10px 30px;
-	background-color: #D6AE48;
+	background-color: #dfa974;
 	border: 2px solid transparent;
 	border-radius: 40px;
 	color: #FFF;
@@ -142,8 +142,8 @@ blockquote:before{
 
 .main-button:hover , .main-button:focus {
 	background-color:#fff;
-	border: 2px solid #D6AE48;
-	color:#D6AE48;
+	border: 2px solid #dfa974;
+	color:#dfa974;
 }
 
 .main-button.icon-button:hover , .main-button.icon-button:focus {
@@ -184,7 +184,7 @@ textarea {
 }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="url"]:focus, input[type="tel"]:focus, textarea:focus {
-	border-color:#D6AE48;
+	border-color:#dfa974;
 }
 
 /*------------------------------------*\
@@ -455,15 +455,15 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
   .btn-primary:hover {
 	color: #fff;
-	background-color: #d6ae48;
+	background-color: #dfa974;
 	border-color:
-  #d6ae48;
+  #dfa974;
   }
   .btn-primary {
-	color: #d6ae48;
+	color: #dfa974;
 	background-color: #fff;
 	border-color:
-  #d6ae48;
+  #dfa974;
   }
 /*------------------------------------*\
 	Hero Area
@@ -533,7 +533,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	border-radius: 50%;
 	font-size:30px;
 	border:1px solid #EBEBEB;
-	color:#D6AE48;
+	color:#dfa974;
 }
 
 .feature-content {
@@ -583,7 +583,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .about-video:hover .play-icon {
-	color:#D6AE48;
+	color:#dfa974;
 }
 
 @-webkit-keyframes play-animation {
@@ -615,7 +615,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	right:0;
 	bottom:0;
 	top:0;
-	background-color:#D6AE48;
+	background-color:#dfa974;
 	opacity:0.7;
 }
 
@@ -646,7 +646,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	right:0;
 	bottom:0;
 	top:0;
-	background-color:#D6AE48;
+	background-color:#dfa974;
 	opacity:0;
 	-webkit-transition:0.2s opacity;
 	transition:0.2s opacity;
@@ -703,7 +703,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .course .course-details .course-price.course-premium {
-	color: #D6AE48;
+	color: #dfa974;
 }
 
 #courses .center-btn {
@@ -753,14 +753,14 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .footer-nav li a:hover , .footer-nav li a:focus {
-	color:#D6AE48;
+	color:#dfa974;
 }
 
 .footer-nav li a:after {
 	content:"";
 	display:block;
 	height:2px;
-	background-color:#D6AE48;
+	background-color:#dfa974;
 	width:100%;
 	-webkit-transform: translateY(5px);
 	    -ms-transform: translateY(5px);
@@ -853,7 +853,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .contact-details li i {
-	color: #D6AE48;
+	color: #dfa974;
 	margin-right: 15px;
 	border: 1px solid #EBEBEB;
 	border-radius: 50%;
@@ -895,7 +895,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	top:0;
 	bottom:0;
 	right:0;
-	background-color:#D6AE48;
+	background-color:#dfa974;
 	opacity:0;
 	-webkit-transition:0.2s opacity;
 	transition:0.2s opacity;
@@ -912,7 +912,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .single-blog .blog-meta .blog-meta-author > a {
-	color: #D6AE48;
+	color: #dfa974;
 }
 
 .single-blog .blog-meta .blog-meta-comments {
@@ -959,7 +959,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .post-pagination .pages li:hover  , .post-pagination .pages li.active {
-	background-color: #D6AE48;
+	background-color: #dfa974;
 	color:#FFF;
 }
 
@@ -981,7 +981,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .pagination-next:hover  , .pagination-back:hover  {
 	color:#FFF;
-	background-color:#D6AE48;
+	background-color:#dfa974;
 }
 
 .pagination-next:after {
@@ -1023,7 +1023,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .widget.search-widget .input:focus + button {
-	color:#D6AE48;
+	color:#dfa974;
 }
 
 /*-- Category --*/
@@ -1044,7 +1044,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	width: 4px;
 	height: 4px;
 	border-radius: 50%;
-	background-color: #D6AE48;
+	background-color: #dfa974;
 	margin-right:10px;
 }
 
@@ -1087,7 +1087,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	top:0;
 	bottom:0;
 	right:0;
-	background-color:#D6AE48;
+	background-color:#dfa974;
 	opacity:0;
 	-webkit-transition:0.2s opacity;
 	transition:0.2s opacity;
@@ -1113,8 +1113,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .tags-widget .tag:hover {
-	background-color:#D6AE48;
-	border-color:#D6AE48;
+	background-color:#dfa974;
+	border-color:#dfa974;
 	color:#FFF;
 }
 
@@ -1139,7 +1139,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .blog-post-meta .blog-meta-author > a {
-	color: #D6AE48;
+	color: #dfa974;
 }
 
 /* --- Blog Share --- */
@@ -1386,7 +1386,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	width:40px;
 	height:40px;
 	border: 1px solid #EBEBEB;
-    border-top: 1px solid #D6AE48;
+    border-top: 1px solid #dfa974;
     border-radius: 50%;
 	-webkit-animation: 1s preloader linear infinite;
 	        animation: 1s preloader linear infinite;
@@ -1478,7 +1478,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .nav-link.active {
-	border-left: 3px solid #D6AE48;
+	border-left: 3px solid #dfa974;
 	color: #1c2c5b;
 	font-weight: 700;
 }
@@ -1504,7 +1504,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	display: inline-block;
 	margin-top: 10px;
 	padding: 8px 20px;
-	background: #D6AE48;
+	background: #dfa974;
 	color: #fff;
 	text-decoration: none;
 	border-radius: 5px;
@@ -1751,11 +1751,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 
   .services-section {
-	background: linear-gradient(135deg, #f8f9fa, #daa520);
+	background: linear-gradient(135deg, #f8f9fa, #dfa974);
 	padding: 60px 0;
 }
   .services-section-1 {
-	background: linear-gradient(135deg,  #daa520,#f8f9fa);
+	background: linear-gradient(135deg,  #dfa974,#f8f9fa);
 	padding: 60px 0;
 }
 

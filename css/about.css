@@ -19,7 +19,7 @@ img {
     display: block;
     font-size: 18px;
     line-height: 24px;
-    color: #d6ae48
+    color: #dfa974
 ;
     font-weight: 500;
     margin-bottom: 15px;
@@ -110,7 +110,7 @@ img {
     font-weight: 600;
     overflow: hidden;
     letter-spacing: 0.02em;
-    background-color: #d6ae48
+    background-color: #dfa974
 ;
   }
 
@@ -216,7 +216,7 @@ img {
     left: -3px;
     background: transparent;
     z-index: 0;
-    border: 44px solid #d6ae48
+    border: 44px solid #dfa974
 ;
   }
 
