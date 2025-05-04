@@ -27,7 +27,6 @@
 
 </head>
 
-
 <body>
 	<!-- Get Pro Button -->
 	<ul class="pro-features">
@@ -38,28 +37,29 @@
 		<div class="header-inner">
 			<div class="container">
 				<div class="inner">
-					<div class="row">
-						<div class="col-lg-3 col-md-3 col-12">
+					<div class="row align-items-center">
+						<div class="col-lg-3 col-md-3 col-6 d-flex align-items-center">
 							<div class="logo">
 								<img src="/img/AVERIXIS SOLUTION-01.png" alt="logo" style="height: 70px; width: auto;">
 							</div>
-							<div class="mobile-nav"></div>
 						</div>
+						<div class="col-6 d-lg-none d-flex justify-content-end align-items-center">
+							<div class="mobile-nav-toggle" onclick="toggleMenu()">☰</div>
+						</div>
+
 						<div class="col-lg-7 col-md-9 col-12">
-							<div class="main-menu">
+							<div class="main-menu" id="mainMenu">
 								<nav class="navigation">
 									<ul class="nav menu">
-										<li class="active"><a href="index.html">Home</a>
-
-										</li>
-										<li><a href="courses.html">Courses </a></li>
-										<li><a href="career.html">Career </a></li>
+										<li class="active"><a href="index.html">Home</a></li>
+										<li><a href="courses.html">Courses</a></li>
+										<li><a href="career.html">Career</a></li>
 										<li><a href="about.html">About</a></li>
 									</ul>
 								</nav>
 							</div>
 						</div>
-						<div class="col-lg-2 col-12">
+						<div class="col-lg-2 col-6 text-end">
 							<div class="get-quote">
 								<a href="register.html" class="btn">Join Now</a>
 							</div>
@@ -69,6 +69,7 @@
 			</div>
 		</div>
 	</header>
+
 	<!-- End Header Area -->
 
 
@@ -661,6 +662,13 @@
 			});
 		});
 	</script>
+	<script>
+		function toggleMenu() {
+			const menu = document.getElementById('mainMenu');
+			menu.classList.toggle('active');
+		}
+	</script>
+
 
 </body>
 

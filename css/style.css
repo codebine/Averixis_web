@@ -2168,3 +2168,94 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	-webkit-transform: scaleX(1);
 	transform: scaleX(1);
 }
+
+
+/* General styles */
+.header {
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+	position: relative;
+	z-index: 1000;
+  }
+  
+  .navigation .menu {
+	list-style: none;
+	display: flex;
+	gap: 20px;
+	padding: 0;
+	margin: 0;
+  }
+  
+  .navigation .menu li a {
+	text-decoration: none;
+	color: #333;
+	font-weight: 500;
+  }
+  
+  .get-quote .btn {
+	padding: 10px 20px;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 4px;
+  }
+  
+  /* Mobile nav toggle (hamburger icon) */
+  .mobile-nav-toggle {
+	display: none;
+	font-size: 28px;
+	cursor: pointer;
+	padding: 10px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 991px) {
+	.main-menu {
+	  display: none;
+	  flex-direction: column;
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+	  right: 0;
+	  background-color: #fff;
+	  padding: 20px;
+	  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+	}
+  
+	.main-menu.active {
+	  display: flex;
+	}
+  
+	.navigation .menu {
+	  flex-direction: column;
+	  gap: 10px;
+	}
+  
+	.mobile-nav-toggle {
+	  display: block;
+	}
+  }
+  
+
+
+  .header {
+	background-color: transparent !important;
+	border-bottom: none !important; /* optional: remove border */
+	position: absolute !important;
+	width: 100% !important;
+	top: 0 !important ;
+	left: 0 !important;
+	z-index: 1000 !important;
+  }
+  
+  .navigation .menu li a {
+	color: #000 !important; /* Change this if your background is light or dark */
+  }
+  
+  .get-quote .btn {
+	background: #dfa974 !important;
+	color: #fff !important;
+  }
+  
+  .mobile-nav-toggle {
+	color: #000 !important;
+  }
