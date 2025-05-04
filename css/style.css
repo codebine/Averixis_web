@@ -2233,6 +2233,9 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	.mobile-nav-toggle {
 	  display: block;
 	}
+	.navigation .menu li a {
+		color: #000 !important; /* Change this if your background is light or dark */
+	  }
   }
   
 
@@ -2248,7 +2251,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   }
   
   .navigation .menu li a {
-	color: #000 !important; /* Change this if your background is light or dark */
+	color: #fff; /* Change this if your background is light or dark */
   }
   
   .get-quote .btn {
