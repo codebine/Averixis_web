@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Python for Machine Learning</title>
+    	<!-- Favicons -->
+	<link href="img/AVERIXIS SOLUTION 3D.jpg" rel="icon">
+	<link href="img/AVERIXIS SOLUTION 3D.jpg" rel="icon">
+	<!-- Meta  OG Property -->
+	<link rel="icon" href="https://averixis.com/img/AVERIXIS SOLUTION 3D.jpg" type="image/png">
+	<meta property="og:title" content="Averixis Solutions">
+	<meta property="og:site_name" content="Averixis">
+	<meta property="og:description" content="Solutions">
+	<meta property="og:url" content="https://averixis.com">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://averixis.com/img/AVERIXIS SOLUTION 3D.jpg">
+	<meta property="og:logo" content="https://averixis.com/img/AVERIXIS SOLUTION 3D.jpg">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+    <!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+</head>
+<style>
+    .course-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar {
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
+
+    .review img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .review-star {
+        color: #ffc107;
+    }
+
+    .apply-btn {
+        background-color: #dfa974;
+        color: white;
+    }
+
+    .apply-btn:hover {
+        background-color: #dfa974;
+    }
+
+    .nav-tabs .nav-link.active {
+        background-color: #dfa974;
+        color: white;
+    }
+
+    .course-price {
+        font-size: 1.5rem;
+        color: #dfa974;
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: #888;
+        margin-right: 10px;
+    }
+
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .hero-title {
+        font-size: 48px;
+        font-weight: bold;
+    }
+
+    .hero-subtitle {
+        color: #dfa974;
+        font-weight: 600;
+    }
+
+    .btn-enroll {
+        background-color: #dfa974;
+        border: none;
+        font-weight: bold;
+    }
+
+    .btn-enroll:hover {
+        background-color: #dfa974;
+    }
+
+    .course-img {
+        border-radius: 10px;
+        max-width: 100%;
+    }
+
+    .overview-section,
+    .curriculum-section {
+        padding: 40px 0;
+    }
+
+    h3.section-title {
+        border-bottom: 2px solid #dfa974;
+        display: inline-block;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+    }
+
+    .rating {
+        color: gold;
+        font-size: 18px;
+    }
+</style>
+
+<body>
+    <!-- Header Section Begin -->
+	<header class="header">
+		<div class="header-inner">
+			<div class="container">
+				<div class="inner">
+					<div class="row align-items-center">
+						<div class="col-lg-3 col-md-3 col-6 d-flex align-items-center">
+							<div class="logo">
+								<img src="img/AVERIXIS SOLUTION-01.png" alt="logo" style="height: 70px; width: auto;">
+							</div>
+						</div>
+						<div class="col-6 d-lg-none d-flex justify-content-end align-items-center">
+							<div class="mobile-nav-toggle" onclick="toggleMenu()">☰</div>
+						</div>
+
+						<div class="col-lg-7 col-md-9 col-12">
+							<div class="main-menu" id="mainMenu">
+								<nav class="navigation">
+									<ul class="nav menu">
+										<li><a href="index.html">Home</a></li>
+										<li><a href="courses.html">Courses</a></li>
+										<li><a href="career.html">Career</a></li>
+										<li><a href="about.html">About</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+						<div class="col-lg-2 col-6 text-end">
+							<div class="get-quote">
+								<a href="register.html" class="btn">Join Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Header End -->
+     <!-- Hero-area -->
+	<div class="hero-area section">
+		<!-- Backgound Image -->
+		<div class="bg-image bg-parallax overlay" style="background-image:url(./img/blog-post-background.jpg)"></div>
+		<!-- /Backgound Image -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1 text-center" style="margin-top: 150px;">
+					<ul class="hero-area-tree">
+						<li><a href="index.html">Home</a></li>
+						<li>course-details</li>
+					</ul>
+					<h1 class="white-text">How to Get Started </h1>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- /Hero-area -->
+
+    <div class="container my-5">
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-lg-8">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="col-md-12">
+                        <h1 class="hero-title">IOT & Robotics<br>Training</h1>
+                        <p>Understand the scope and prospects of IOT & Robotics, learn how ML is being
+                            used in various industries with our internship programs and develop the
+                            necessary skills and Python programming to become a successful ML Engineer.</p>
+                        <a href="form.html" class="btn btn-enroll btn-lg my-3">Enroll for this program</a>
+                    </div>
+                </div>
+
+                <img src="/img-1/CS.jpg" alt="Course Image" class="course-image mb-4">
+
+                <h2>IOT & Robotics</h2>
+                <p>Learn how to use NumPy, Pandas, Seaborn, Matplotlib, Plotly, Scikit-Learn, IOT & Robotics,
+                    TensorFlow, and more!</p>
+
+                <ul class="nav nav-tabs my-4" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc"
+                            type="button" role="tab">Description</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum"
+                            type="button" role="tab">Curriculum</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="instructors-tab" data-bs-toggle="tab" data-bs-target="#instructors"
+                            type="button" role="tab">Instructors</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review"
+                            type="button" role="tab">Review</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="desc" role="tabpanel">
+                        <div class="overview-section mt-5">
+                            <h3 class="section-title">Course Overview</h3>
+                            <p style="color: #0d0d25;">This IOT & Robotics course is designed to provide a
+                                comprehensive introduction to ML concepts, algorithms, and applications. You'll work on
+                                real-world projects, learn Python programming, and build models using popular libraries
+                                like Scikit-learn, Pandas, and TensorFlow.</p>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="curriculum" role="tabpanel">
+                        <div class="curriculum-section mt-4">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            Module 1: Introduction
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">1. Introduction to IOT & Robotics & AI
+                                                </li>
+                                                <li class="list-group-item">2. Python for ML – Basics to Advanced</li>
+                                                <li class="list-group-item">3. Data Preprocessing and Feature
+                                                    Engineering</li>
+                                                <li class="list-group-item">4. Supervised & Unsupervised Learning
+                                                    Algorithms</li>
+                                                <li class="list-group-item">5. Real-world Projects and Capstone</li>
+                                                <li class="list-group-item">6. Resume & Interview Preparation</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            Module 2: Deep Learning
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">1. Neural Networks Fundamentals</li>
+                                                <li class="list-group-item">2. CNNs, RNNs, and LSTMs</li>
+                                                <li class="list-group-item">3. Deep Learning Frameworks (TensorFlow,
+                                                    PyTorch)</li>
+                                                <li class="list-group-item">4. Model Optimization and Tuning</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            Module 3: NLP & Text Analytics
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">1. Text Preprocessing Techniques</li>
+                                                <li class="list-group-item">2. Sentiment Analysis</li>
+                                                <li class="list-group-item">3. Word Embeddings & Transformers</li>
+                                                <li class="list-group-item">4. Chatbots and Language Models</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                            aria-expanded="false" aria-controls="collapseFour">
+                                            Module 4: Computer Vision
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">1. Image Processing Fundamentals</li>
+                                                <li class="list-group-item">2. Object Detection & Recognition</li>
+                                                <li class="list-group-item">3. Face Detection & Classification</li>
+                                                <li class="list-group-item">4. Transfer Learning in CV</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                            aria-expanded="false" aria-controls="collapseFive">
+                                            Module 5: Tools & Deployment
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">1. Git, GitHub, and Version Control</li>
+                                                <li class="list-group-item">2. Streamlit & Flask for Model Deployment
+                                                </li>
+                                                <li class="list-group-item">3. Docker & Cloud Integration</li>
+                                                <li class="list-group-item">4. MLOps Basics</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseSix"
+                                            aria-expanded="false" aria-controls="collapseSix">
+                                            Module 6: Career Prep & Final Project
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSix" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">1. Building a Portfolio</li>
+                                                <li class="list-group-item">2. Mock Interviews & Feedback</li>
+                                                <li class="list-group-item">3. Final Capstone Project Presentation</li>
+                                                <li class="list-group-item">4. Connecting with Recruiters</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="instructors" role="tabpanel">
+                        <p>Instructor: Jasika Peat, Data Scientist</p>
+                    </div>
+                    <div class="tab-pane fade" id="review" role="tabpanel">
+                        <!-- Reviews -->
+                        <div class="review my-3 d-flex">
+                            <img src="https://via.placeholder.com/60" alt="User">
+                            <div class="rating mt-5">
+                                <strong>4.7</strong>
+                                <span>⭐⭐⭐⭐⭐</span>
+                                <span class="ms-2">4,102+ learners</span>
+                            </div>
+                        </div>
+                        <!-- Repeat the review block as needed -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <h5>Course Features</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>Lectures:</strong> 9</li>
+                        <li><strong>Duration:</strong> 1.5 hours</li>
+                        <li><strong>Skill Level:</strong> All level</li>
+                        <li><strong>Language:</strong> English</li>
+                        <li><strong>Students:</strong> 560</li>
+                        <li><strong>Certificate:</strong> Yes</li>
+                        <li><strong>Assessments:</strong> Yes</li>
+                    </ul>
+                   
+                </div>
+
+                <div class="sidebar mt-4">
+                    <h5>Share Courses</h5>
+                    <div>
+                        <i class="bi bi-facebook me-2"></i>
+                        <i class="bi bi-twitter me-2"></i>
+                        <i class="bi bi-linkedin me-2"></i>
+                    </div>
+                </div>
+
+                <div class="sidebar mt-4">
+                    <h5>Related Posts</h5>
+                    <div id="aside" class="col">
+                        <!-- posts widget -->
+                         <div class="widget posts-widget">
+                            <!-- single post -->
+                            <div class="single-post mb-4">
+                                <a class="single-post-img d-block mb-2" href="courses.html">
+                                    <img src="./img-1/CS.jpg" alt="" class="img-fluid rounded">
+                                </a>
+                                <a href="courses.html">CyberSecurity</a>
+                                <p><small>By : John Doe • 18 Oct, 2017</small></p>
+                            </div>
+                            <div class="single-post mb-4">
+                                <a class="single-post-img d-block mb-2" href="courses.html">
+                                    <img src="./img-1/Data science.jpg" alt="" class="img-fluid rounded">
+                                </a>
+                                <a href="courses.html">Learn about Data Science</a>
+                                <p><small>By : Jane Smith • 20 Oct, 2017</small></p>
+                            </div>
+                            <div class="single-post">
+                                <a class="single-post-img d-block mb-2" href="courses.html">
+                                    <img src="./img-1/AI.jpg" alt="" class="img-fluid rounded">
+                                </a>
+                                <a href="courses.html">Deep Learning vs AI – What's the difference?</a>
+                                <p><small>By : Alex Ray • 25 Oct, 2017</small></p>
+                            </div>
+                            <div class="single-post">
+                                <a class="single-post-img d-block mb-2" href="courses.html">
+                                    <img src="./img-1/machinelearning.jpg" alt="" class="img-fluid rounded">
+                                </a>
+                                <a href="courses.html">machinelearning</a>
+                                <p><small>By : Alex Ray • 25 Oct, 2017</small></p>
+                            </div>
+                            <div class="single-post">
+                                <a class="single-post-img d-block mb-2" href="courses.html">
+                                    <img src="./img-1/Android.webp" alt="" class="img-fluid rounded">
+                                </a>
+                                <a href="courses.html">Application Programming</a>
+                                <p><small>By : Alex Ray • 25 Oct, 2017</small></p>
+                            </div>
+                        </div>
+                        <!-- /posts widget -->
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-comments mb-5">
+                    <h3>Share Comments</h3>
+                    <!-- blog reply form -->
+                    <div class="blog-reply-form mt-5">
+                        <h3>Leave Comment</h3>
+                        <form>
+                            <input class="form-control mb-3" type="text" name="name" placeholder="Name">
+                            <input class="form-control mb-3" type="email" name="email" placeholder="Email">
+                            <textarea class="form-control mb-3" name="message" placeholder="Enter your Message"
+                                rows="4"></textarea>
+                            <button class="btn btn-success">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
