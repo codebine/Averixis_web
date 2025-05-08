@@ -144,25 +144,26 @@
               </ul>
             </div>
 
-            <form class="flex-grow-1 d-flex flex-column">
+            <form class="flex-grow-1 d-flex flex-column" onsubmit="return false;">
               <div class="mb-4">
                 <label class="form-label fw-semibold">Choose your plan:</label>
                 <div class="d-flex justify-content-between gap-2">
-                  <button type="button" class="btn btn-outline-primary w-100" onclick="selectPlan('1')">1 Month</button>
-                  <button type="button" class="btn btn-outline-primary w-100" onclick="selectPlan('3')">3 Months</button>
-                  <button type="button" class="btn btn-outline-primary w-100" onclick="selectPlan('6')">6 Months</button>
+                  <button type="button" class="btn btn-outline-primary w-100 " onclick="selectPlan('1', this)">1 Month</button>
+                  <button type="button" class="btn btn-outline-primary w-100" onclick="selectPlan('3', this)">3 Months</button>
+                  <button type="button" class="btn btn-outline-primary w-100" onclick="selectPlan('6', this)">6 Months</button>
                 </div>
               </div>
             
               <div class="p-3 border rounded bg-white text-center mb-4 shadow-sm">
                 <div class="mb-2"><strong>Estimated Study Time:</strong> 8 hours/week</div>
-                <div class="fs-5 text-primary" id="pricePerMonth"><strong>₹1000</strong> / month</div>
-                <div>Total <strong id="totalPrice">₹8,551</strong></div>
+                <div class="fs-5 text-primary" id="pricePerMonth"><strong>₹2833</strong> / month</div>
+                <div>Total <strong id="totalPrice">₹8500</strong></div>
               </div>
+            
               <div class="p-3 border rounded bg-white text-center mb-4 shadow-sm">
                 <div class="my-2">
                   <input type="text" id="couponCode" class="form-control mb-2" value="AVS50" readonly>
-                  <button class="btn btn-outline-primary w-100" onclick="applyCoupon()">Apply Coupon</button>
+                  <button type="button" class="btn btn-outline-primary w-100" onclick="applyCoupon()">Apply Coupon</button>
                 </div>
               </div>
             </form>
@@ -193,33 +194,50 @@
       '6': { pricePerMonth: 2000, total: 12000 }
     };
   
-    function selectPlan(months) {
+    let selectedPlan = '3'; // default selection
+    let couponApplied = false;
+  
+    function selectPlan(months, btn) {
+      selectedPlan = months;
+      couponApplied = false; // reset coupon if plan changes
+  
       const price = plans[months];
+  
+      // Update prices
       document.getElementById('pricePerMonth').innerHTML = `<strong>₹${price.pricePerMonth}</strong> / month`;
       document.getElementById('totalPrice').innerHTML = `₹${price.total}`;
   
       // Update button styles
-      document.querySelectorAll("button[type='button']").forEach(btn => {
-        btn.classList.remove('btn-primary');
-        btn.classList.add('btn-outline-primary');
+      document.querySelectorAll("button[type='button']").forEach(b => {
+        b.classList.remove('btn-primary');
+        b.classList.add('btn-outline-primary');
       });
-  
-      event.target.classList.add('btn-primary');
-      event.target.classList.remove('btn-outline-primary');
+      btn.classList.add('btn-primary');
+      btn.classList.remove('btn-outline-primary');
     }
-  </script>
-  <script>
+  
     function applyCoupon() {
       const coupon = document.getElementById("couponCode").value.trim();
       if (coupon === "AVS50") {
-        const discountedTotal = 8551 * 0.5;
-        document.getElementById("totalPrice").innerText = `₹${discountedTotal.toFixed(2)}`;
+        if (couponApplied) {
+          alert("Coupon already applied.");
+          return;
+        }
+  
+        const originalTotal = plans[selectedPlan].total;
+        const discountedTotal = originalTotal * 0.5;
+  
+        document.getElementById("totalPrice").innerHTML = `₹${discountedTotal.toFixed(2)}`;
+        document.getElementById("pricePerMonth").innerHTML = `<strong>₹${(discountedTotal / parseInt(selectedPlan)).toFixed(2)}</strong> / month`;
+  
+        couponApplied = true;
         alert("Coupon applied successfully!");
       } else {
         alert("Invalid coupon.");
       }
     }
   </script>
+  
 </body>
 
 </html>
