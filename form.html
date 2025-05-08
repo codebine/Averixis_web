@@ -144,8 +144,8 @@
 
           <div class="p-3 border rounded bg-white text-center mb-4 shadow-sm">
             <div class="mb-2"><strong>Estimated Study Time:</strong> 8 hours/week</div>
-            <div class="fs-5 text-primary" id="pricePerMonth"><strong>₹1000</strong> For Registration</div>
             <div>Total <strong id="totalPrice">₹0.00</strong></div>
+            <div class="fs-5 text-primary mt-2"><strong>₹1000</strong> For Registration</div>
           </div>
         </form>
 
@@ -181,10 +181,10 @@
               <span>Offer Price:</span>
               <span id="offerPrice" class="text-success d-none">₹2500.00</span>
             </div>
-            <div class="d-flex justify-content-between">
+            <!-- <div class="d-flex justify-content-between">
               <span>GST (18%):</span>
               <span id="gst">₹0.00</span>
-            </div>
+            </div> -->
             <hr />
             <div class="d-flex justify-content-between fw-bold">
               <span>Total:</span>
@@ -319,10 +319,13 @@
         document.getElementById('fullPrice').innerText = `₹${plan.total.toFixed(2)}`;
         document.getElementById('offerPrice').classList.add("d-none");
         document.getElementById('fullPrice').style.textDecoration = "none";
-        document.getElementById('gst').innerText = `₹0.00`;
         document.getElementById('totalAmount').innerText = `₹${plan.total.toFixed(2)}`;
     
-        // Remove per month display if exists
+        // Hide GST section
+        const gst = document.getElementById('gst');
+        if (gst) gst.style.display = 'none';
+    
+        // Hide per month display if exists
         const pricePerMonth = document.getElementById('pricePerMonth');
         if (pricePerMonth) pricePerMonth.style.display = 'none';
     
@@ -349,20 +352,20 @@
     
         const originalTotal = plans[selectedPlan].total;
         const discountedTotal = originalTotal * 0.5;
-        const gstAmount = discountedTotal * 0.18;
-        const finalAmount = discountedTotal + gstAmount;
     
         document.getElementById("offerPrice").classList.remove("d-none");
         document.getElementById("fullPrice").style.textDecoration = "line-through";
     
         document.getElementById("offerPrice").innerText = `₹${discountedTotal.toFixed(2)}`;
-        document.getElementById("gst").innerText = `₹${gstAmount.toFixed(2)}`;
-        document.getElementById("totalAmount").innerText = `₹${finalAmount.toFixed(2)}`;
+        document.getElementById("totalAmount").innerText = `₹${discountedTotal.toFixed(2)}`;
     
         // Update top section
         document.getElementById("totalPrice").innerHTML = `₹${discountedTotal.toFixed(2)}`;
     
-        // Hide per month display
+        // Hide GST and per month display
+        const gst = document.getElementById('gst');
+        if (gst) gst.style.display = 'none';
+    
         const pricePerMonth = document.getElementById('pricePerMonth');
         if (pricePerMonth) pricePerMonth.style.display = 'none';
     
@@ -381,11 +384,13 @@
         document.getElementById('fullPrice').innerText = `₹${plan.total.toFixed(2)}`;
         document.getElementById('offerPrice').classList.add("d-none");
         document.getElementById('fullPrice').style.textDecoration = "none";
-        document.getElementById('gst').innerText = `₹0.00`;
         document.getElementById('totalAmount').innerText = `₹${plan.total.toFixed(2)}`;
         couponApplied = false;
     
-        // Hide per month again just in case
+        // Hide GST and per month again
+        const gst = document.getElementById('gst');
+        if (gst) gst.style.display = 'none';
+    
         const pricePerMonth = document.getElementById('pricePerMonth');
         if (pricePerMonth) pricePerMonth.style.display = 'none';
       }
@@ -395,6 +400,7 @@
         selectPlan(selectedPlan, document.querySelector("button[onclick*='3']"));
       };
     </script>
+    
     
     
     
