@@ -81,6 +81,8 @@
     --bs-btn-disabled-border-color: #D6AE48;
     --bs-gradient: none;
 }
+.hidden { display: none; }
+    .text-success { color: green; }
   </style>
 </head>
 
@@ -90,89 +92,113 @@
   <a href="blog-post.html" class="btn btn-secondary back-button">&larr; Back</a>
 
   <div class="container mt-5">
-    <div class="card shadow-lg p-4">
-      <div class="row g-4 align-items-stretch">
-        <!-- Registration Form -->
-        <div class="col-md-6 d-flex">
-          <div class="w-100 d-flex flex-column">
-            <h4 class="text-center mb-3">Course Registration - Averixis</h4>
-            <form class="flex-grow-1 d-flex flex-column">
-              <div class="mb-3">
-                <label for="name" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="name" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="email" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="email" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="phone" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="phone" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="course" class="form-label">Select Course</label>
-                <select class="form-select" id="course" required>
-                  <option value="">Choose a course</option>
-                  <option value="php">PHP Tips, Tricks, and Techniques</option>
-                  <option value="web-design">All You Need To Know About Web Design</option>
-                  <option value="photography">How to Get Started in Photography</option>
-                  <option value="typography">Typography From A to Z</option>
-                </select>
-              </div>
-
-              <div class="mb-3 flex-grow-1">
-                <label for="message" class="form-label">Additional Notes</label>
-                <textarea class="form-control h-100" id="message" rows="3"></textarea>
-              </div>
-            </form>
+<!-- Registration Page -->
+<div class="card shadow-lg p-4" style="min-height: 100vh;">
+  <div class="row g-4 align-items-stretch h-100">
+    <!-- Registration Form -->
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <div class="w-100 d-flex flex-column">
+        <h4 class="text-center mb-3">Course Registration - Averixis</h4>
+        <form class="flex-grow-1 d-flex flex-column">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" required>
           </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" required>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Plan Selection -->
+    <div class="col-md-6 d-flex">
+      <div class="w-100 d-flex flex-column">
+        <h4 class="text-center mb-4 fw-bold text-primary">Choose Your Learning Plan</h4>
+
+        <div class="bg-light p-3 rounded shadow-sm mb-4">
+          <ul class="list-unstyled mb-0">
+            <li>✅Unlimited access to all the domains</li>
+            <li>✅Shareable certificate from MNC</li>
+            <li>✅LMS ACCESS up to 6 months</li>
+            <li>✅Placements assistance </li>
+            <li>✅Mock interviews</li>
+          </ul>
         </div>
-        <!-- Plan Selection -->
-        <div class="col-md-6 d-flex">
-          <div class="w-100 d-flex flex-column">
-            <h4 class="text-center mb-4 fw-bold text-primary">Choose Your Learning Plan</h4>
 
-            <div class="bg-light p-3 rounded shadow-sm mb-4">
-              <ul class="list-unstyled mb-0">
-                <li>✅ Unlimited access to all 5 courses</li>
-                <li>✅ Shareable certificate from Google Cloud</li>
-                <li>✅ EMI payment options</li>
-                <!-- <li>✅ 14-day refund period</li> -->
-              </ul>
+        <form class="flex-grow-1 d-flex flex-column" onsubmit="return false;">
+          <div class="mb-4">
+            <label class="form-label fw-semibold">Choose your plan:</label>
+            <div class="d-flex justify-content-between gap-2">
+              <button type="button" class="btn btn-outline-primary w-100" onclick="selectPlan('3', this)">3 Month</button>
+              <button type="button" class="btn btn-outline-primary w-100" onclick="selectPlan('6', this)">6 Month</button>
             </div>
-
-            <form class="flex-grow-1 d-flex flex-column" onsubmit="return false;">
-              <div class="mb-4">
-                <label class="form-label fw-semibold">Choose your plan:</label>
-                <div class="d-flex justify-content-between gap-2">
-                  <button type="button" class="btn btn-outline-primary w-100 " onclick="selectPlan('1', this)">1 Month</button>
-                  <button type="button" class="btn btn-outline-primary w-100" onclick="selectPlan('3', this)">3 Months</button>
-                  <button type="button" class="btn btn-outline-primary w-100" onclick="selectPlan('6', this)">6 Months</button>
-                </div>
-              </div>
-            
-              <div class="p-3 border rounded bg-white text-center mb-4 shadow-sm">
-                <div class="mb-2"><strong>Estimated Study Time:</strong> 8 hours/week</div>
-                <div class="fs-5 text-primary" id="pricePerMonth"><strong>₹0.00</strong> / month</div>
-                <div>Total <strong id="totalPrice">₹0.00</strong></div>
-              </div>
-            
-              <div class="p-3 border rounded bg-white text-center mb-4 shadow-sm">
-                <div class="my-2">
-                  <input type="text" id="couponCode" class="form-control mb-2" value="AVS50" readonly>
-                  <button type="button" class="btn btn-outline-primary w-100" onclick="applyCoupon()">Apply Coupon</button>
-                </div>
-              </div>
-            </form>
-            
-            <a type="submit" class="btn btn-primary w-100 mt-auto" href="https://pages.razorpay.com/pl_PonQ5ahHfAcU9r/view">Register</a>
           </div>
+
+          <div class="p-3 border rounded bg-white text-center mb-4 shadow-sm">
+            <div class="mb-2"><strong>Estimated Study Time:</strong> 8 hours/week</div>
+            <div class="fs-5 text-primary" id="pricePerMonth"><strong>₹1000</strong> For Registration</div>
+            <div>Total <strong id="totalPrice">₹0.00</strong></div>
+          </div>
+        </form>
+
+        <a type="submit" class="btn btn-primary w-100 mt-auto" onclick="goToPayment()">Next</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Payment Page -->
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 d-none" id="paymentSection">
+      <div class="card shadow-lg p-4">
+        <div class="w-100 d-flex flex-column">
+          <h4 class="text-center mb-4 fw-bold text-primary">Payment Details</h4>
+
+          <!-- Coupon -->
+          <div class="p-3 border rounded bg-white text-center mb-4 shadow-sm">
+            <div class="my-2">
+              <input type="text" id="couponCode" class="form-control mb-2" value="AVS50" readonly>
+              <button type="button" class="btn btn-outline-primary w-100" onclick="applyCoupon()">Apply Coupon</button>
+            </div>
+          </div>
+
+          <!-- Pricing -->
+          <div class="p-3 border rounded bg-white mb-4 shadow-sm">
+            <div class="d-flex justify-content-between">
+              <span>Full Price:</span>
+              <span id="fullPrice">₹5000.00</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span>Offer Price:</span>
+              <span id="offerPrice" class="text-success d-none">₹2500.00</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span>GST (18%):</span>
+              <span id="gst">₹0.00</span>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between fw-bold">
+              <span>Total:</span>
+              <span id="totalAmount">₹5000.00</span>
+            </div>
+          </div>
+
+          <a type="submit" class="btn btn-primary w-100 mt-auto" href="https://pages.razorpay.com/pl_PonQ5ahHfAcU9r/view">Proceed to Pay</a>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
   </div>
   <div class="alert alert-info mt-4 text-center" style="max-width: 800px; margin: 0 auto;">
     <small>
@@ -187,11 +213,11 @@
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
+  <!-- <script>
     const plans = {
       '1': { pricePerMonth: 5500, total: 5500 },
-      '3': { pricePerMonth: 2833, total: 8500 },
-      '6': { pricePerMonth: 2000, total: 12000 }
+      '3': { pricePerMonth: 8000, total: 8000 },
+      '6': { pricePerMonth: 15000, total: 15000}
     };
   
     let selectedPlan = '3'; // default selection
@@ -236,8 +262,142 @@
         alert("Invalid coupon.");
       }
     }
-  </script>
+  </script> -->
+    <script>
+      const originalPrice = 5000;
+      const discountPrice = 2500;
+      const gstRate = 0.18;
   
+      function goToPayment() {
+        document.getElementById("registrationSection").classList.add("hidden");
+        document.getElementById("paymentSection").classList.remove("hidden");
+      }
+  
+      function applyCoupon() {
+        // Show offer price
+        document.getElementById("offerPrice").classList.remove("d-none");
+        document.getElementById("fullPrice").style.textDecoration = "line-through";
+  
+        // Calculate GST and total
+        const gst = discountPrice * gstRate;
+        const total = discountPrice + gst;
+  
+        document.getElementById("gst").innerText = `₹${gst.toFixed(2)}`;
+        document.getElementById("totalAmount").innerText = `₹${total.toFixed(2)}`;
+        document.getElementById("offerPrice").innerText = `₹${discountPrice.toFixed(2)}`;
+      }
+    </script>
+    <script>
+      function goToPayment() {
+        document.getElementById('paymentSection').classList.remove('d-none');
+        window.scrollTo({
+          top: document.getElementById('paymentSection').offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    </script>
+    
+    <script>
+      const plans = {
+        '3': { total: 8000 },
+        '6': { total: 15000 }
+      };
+    
+      let selectedPlan = '3';
+      let couponApplied = false;
+    
+      function selectPlan(months, btn) {
+        selectedPlan = months;
+        couponApplied = false;
+    
+        const plan = plans[months];
+    
+        // Update total price display (top section)
+        document.getElementById('totalPrice').innerHTML = `₹${plan.total.toFixed(2)}`;
+    
+        // Update payment section
+        document.getElementById('fullPrice').innerText = `₹${plan.total.toFixed(2)}`;
+        document.getElementById('offerPrice').classList.add("d-none");
+        document.getElementById('fullPrice').style.textDecoration = "none";
+        document.getElementById('gst').innerText = `₹0.00`;
+        document.getElementById('totalAmount').innerText = `₹${plan.total.toFixed(2)}`;
+    
+        // Remove per month display if exists
+        const pricePerMonth = document.getElementById('pricePerMonth');
+        if (pricePerMonth) pricePerMonth.style.display = 'none';
+    
+        // Style selected button
+        document.querySelectorAll("button[type='button']").forEach(b => {
+          b.classList.remove('btn-primary');
+          b.classList.add('btn-outline-primary');
+        });
+        btn.classList.add('btn-primary');
+        btn.classList.remove('btn-outline-primary');
+      }
+    
+      function applyCoupon() {
+        const coupon = document.getElementById("couponCode").value.trim();
+        if (coupon !== "AVS50") {
+          alert("Invalid coupon.");
+          return;
+        }
+    
+        if (couponApplied) {
+          alert("Coupon already applied.");
+          return;
+        }
+    
+        const originalTotal = plans[selectedPlan].total;
+        const discountedTotal = originalTotal * 0.5;
+        const gstAmount = discountedTotal * 0.18;
+        const finalAmount = discountedTotal + gstAmount;
+    
+        document.getElementById("offerPrice").classList.remove("d-none");
+        document.getElementById("fullPrice").style.textDecoration = "line-through";
+    
+        document.getElementById("offerPrice").innerText = `₹${discountedTotal.toFixed(2)}`;
+        document.getElementById("gst").innerText = `₹${gstAmount.toFixed(2)}`;
+        document.getElementById("totalAmount").innerText = `₹${finalAmount.toFixed(2)}`;
+    
+        // Update top section
+        document.getElementById("totalPrice").innerHTML = `₹${discountedTotal.toFixed(2)}`;
+    
+        // Hide per month display
+        const pricePerMonth = document.getElementById('pricePerMonth');
+        if (pricePerMonth) pricePerMonth.style.display = 'none';
+    
+        couponApplied = true;
+        alert("Coupon applied successfully!");
+      }
+    
+      function goToPayment() {
+        document.getElementById('paymentSection').classList.remove('d-none');
+        window.scrollTo({
+          top: document.getElementById('paymentSection').offsetTop,
+          behavior: 'smooth'
+        });
+    
+        const plan = plans[selectedPlan];
+        document.getElementById('fullPrice').innerText = `₹${plan.total.toFixed(2)}`;
+        document.getElementById('offerPrice').classList.add("d-none");
+        document.getElementById('fullPrice').style.textDecoration = "none";
+        document.getElementById('gst').innerText = `₹0.00`;
+        document.getElementById('totalAmount').innerText = `₹${plan.total.toFixed(2)}`;
+        couponApplied = false;
+    
+        // Hide per month again just in case
+        const pricePerMonth = document.getElementById('pricePerMonth');
+        if (pricePerMonth) pricePerMonth.style.display = 'none';
+      }
+    
+      // Initialize default selection on load
+      window.onload = () => {
+        selectPlan(selectedPlan, document.querySelector("button[onclick*='3']"));
+      };
+    </script>
+    
+    
+    
 </body>
 
 </html>
